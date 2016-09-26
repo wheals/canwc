@@ -1,4 +1,5 @@
-<html><head>
+<html>
+<head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>C.ᵃN.W. C. remixes......</title>
 <meta property="og:title" content="C.ᵃN.W. C. remixes......" >
@@ -40,13 +41,14 @@ td:nth-child(4) {
 table.no-artist td:nth-child(4) {
     font-size: unset;
 }
+.albumname{ cursor: pointer; }
 </style>
+
 </head>
 
 <body lang="EN-US">
 
 <h3>By cookiefonster</h3>
-<div>
     
 <p><span>This is a list of references in Cool and New Webcomic music, working on the same principles as 
 <a href="http://xzazupsilon.webs.com/nsnd.html">this webpage listing references in Homestuck music.</a></span></p>
@@ -68,11 +70,13 @@ matter, or clarify how exactly it's referenced.</span></p>
 <p><span>Some songs with long names are abbreviated the same way as on the webpage listed above, with one addition:
 RollerCoaster Tycoon is abbreviated as RCT.</span></p>
 
-<p><span>&nbsp;</span></p>
+<button onclick="hide_all()">Hide All</button>
+<button onclick="show_all()">Show All</button>
 
-</span></p><h1><span><b><span>cool</span></b></span><b><span> and new web comic voulem.1</span></b></h1>
+<h1>cool and new web comic voulem.1</h1>
 <table>
- <tbody><tr>
+ <tbody>
+ <tr>
   <td>
    <p><b><span>&nbsp;</span></b></p>
   </td>
@@ -2063,7 +2067,8 @@ RollerCoaster Tycoon is abbreviated as RCT.</span></p>
   <p><span class="official">Freefall</span></p>
   </td>
  </tr>
-</tbody></table>
+</tbody>
+</table>
 <h1>cool and new volume 2</h1>
 <table>
  <tbody><tr>
@@ -5196,11 +5201,8 @@ RollerCoaster Tycoon is abbreviated as RCT.</span></p>
   <td><p><span class="nothomestuck">Dogsong</span></p></td>
   <td><p><span class="nothomestuck">Megalovania</span></p></td>
  </tr></tbody></table>
-</div>
 
 <h1>Of Troles and Chiptumes</h1>
-
-<p><b><span>&nbsp;</span></b></p>
 
 <table>
  <tbody><tr>
@@ -7494,7 +7496,6 @@ RollerCoaster Tycoon is abbreviated as RCT.</span></p>
  </tr>
 </tbody></table>
 
-<p>&nbsp;</p>
 <h1>A Shade of Blue</h1>
 <table>
  <tbody><tr>
@@ -10892,12 +10893,15 @@ s​*​x: hair transplant</h1>
 
 <p><b><span>Reference list coming
 soon!</span></b></p>
+<table></table>
+
 
 <h1>CaNWC Sound Test
 Vol​.​1: REVENGE OF THE GIIVASUNNER </h1>
 
 <p><b><span>Reference list coming
 soon!</span></b></p>
+<table></table>
 
 <h1>Upcoming and unreleased CaNWC songs</h1>
 
@@ -11026,5 +11030,39 @@ soon!</span></b></p>
 <p>&nbsp;</p>
 
 
+<script type="text/javascript">
+    function make_toggle(e) {
+        return function() {
+            if(e.style.display == "none")
+                e.style.display = "block";
+            else
+                e.style.display = "none";
+        }
+    }
 
+    var titles = document.getElementsByTagName("h1");
+    var tables = document.getElementsByTagName("table");
+    if  (titles.length !== tables.length) {
+        console.log("issue")
+        console.log(titles.length)
+        console.log(tables.length)
+    }
+    else {
+        for (i in titles) {
+            titles[i].onclick = make_toggle(tables[i]);
+            titles[i].style.cursor = "pointer";
+        }
+    }
+    
+    function hide_all() {
+        for (i in tables) {
+            tables[i].style.display = "none";
+        }
+    }
+    function show_all() {
+        for (i in tables) {
+            tables[i].style.display = "block";
+        }
+    }
+</script>
 </body></html>
