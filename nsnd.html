@@ -22884,6 +22884,7 @@ Vol​.​1: REVENGE OF THE GIIVASUNNER </h1>
     }
     else {
         for (var i in titles) {
+         if (!titles[i].style) { continue; }
             titles[i].onclick = make_toggle(tables[i]);
             titles[i].style.cursor = "pointer";
             titles[i].onclick();
